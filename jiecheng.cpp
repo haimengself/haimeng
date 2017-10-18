@@ -1,31 +1,29 @@
 #include<stdio.h>
-int main()
+int factorial( int n );
+
+int main(  )
 {
-	int x(int a);
-	int y(int c);
-	int t,i,n,m;
-	scanf("%d",&n);
-	t=1;
-	i=x(n);
-	m=y(n);
-	while(i<=m)
+	int n,res ;
+	
+	scanf( "%d",&n ) ;
+	res = factorial( n ) ;
+	
+	printf( "res = %d\n",res ) ;
+	return 0 ;
+}
+
+int factorial(int n)
+{
+	int i , t ;
+	i = 1 ;
+	t = 2 ;
+	
+	if(n <= 1) return 1 ;
+	while(n-- > 1)
 	{
-	t=t*i;
-	i=i+1;
+		i = t * i ;
+		t = t + 1 ;
 	}
-	printf("%d\n",t);
-	return 0;
- } 
- int x(int a)
- {
- 	int b;
-    if(1<a)b=2;
-	else b=1;
-	return (b);
- }
- int y(int c)
- {
- 	int d;
- 	d=c;
- 	return (d);
- }
+	
+	return i ;
+}
